@@ -7,11 +7,14 @@
     "personalclaw": "./index.ts"
   },
   "scripts": {
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
     "typecheck": "bun check"
   },
   "devDependencies": {
     "@types/bun": "latest",
-    "@types/node": "^26.6.6"
+    "@types/node": "^26.6.6",
+    "prettier": "3.10.1"
   },
   "peerDependencies": {
     "typescript": "^7"
