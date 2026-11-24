@@ -1,3 +1,1 @@
-export function runTelegramMode(){
-    
-}
+export function runTelegramMode() {}

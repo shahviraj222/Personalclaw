@@ -12,24 +12,20 @@ export async function runCliMode() {
         { value: "agent", label: "Agent Mode" },
         { value: "plan", label: "Plan Mode" },
         { value: "ask", label: "Ask Mode" },
-        { value: "back", label: "← Back to main menu" },
+        { value: "back", label: "Exit PersonalClaw" },
       ],
     });
 
     if (isCancel(mode) || mode === "back") return;
 
-    if (mode === "agent") {
-      await runAgentMode();
-    }
-    if (mode === "ask") {
-      await runAskMode();
-    }
-    if (mode === "plan") {
-      await runPlanMode();
-    }
-
-    if (mode !== "agent" && mode !== "plan" && mode !== "ask") {
-      console.log(chalk.yellow("\nThat mode is not implemented yet.\n"));
+    try {
+      if (mode === "agent") await runAgentMode();
+      if (mode === "ask") await runAskMode();
+      if (mode === "plan") await runPlanMode();
+    } catch (error) {
+      console.error(
+        chalk.red(error instanceof Error ? error.message : String(error)),
+      );
     }
   }
 }

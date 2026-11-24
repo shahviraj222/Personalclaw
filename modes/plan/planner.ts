@@ -109,36 +109,35 @@ export async function generatePlan(goal: string) {
   const tracker = new ActionTracker();
   const executor = new ToolExecutor(tracker, config);
 
-
-  const hasWeb = !!process.env.FIRECRAWL_API_KEY;
+  const webTools = createWebTools(tracker);
+  const hasWeb = Object.keys(webTools).length > 0;
   const model = wrapLanguageModel({
-    model:getAgentModel(),
-    middleware:extractJsonMiddleware()
-  })
+    model: getAgentModel(),
+    middleware: extractJsonMiddleware(),
+  });
 
-
-  const tools = { ...readOnlyTools(executor) , ...(hasWeb ? createWebTools(tracker) : {}) };
+  const tools = { ...readOnlyTools(executor), ...webTools };
 
   console.log(chalk.cyan("\n🔍 Researching & drafting a plan…\n"));
 
   const result = await generateText({
     model,
     tools,
-    stopWhen:stepCountIs(20),
-    system:PLAN_INSTRUCTIONS(config.codebasePath , hasWeb),
-    prompt:`User goal: \n${goal}`,
-    output:Output.object({schema:planSchema})
+    stopWhen: stepCountIs(20),
+    system: PLAN_INSTRUCTIONS(config.codebasePath, hasWeb),
+    prompt: `User goal: \n${goal}`,
+    output: Output.object({ schema: planSchema }),
   });
 
   const validated = planSchema.parse(result.output);
 
-  const steps:PlanStep[] = validated.steps.map((s , i)=>({
-    id:`step-${i+1}`,
-    title:s.title,
-    description:s.description,
-    hints:s.hints,
-    complexity:s.complexity
+  const steps: PlanStep[] = validated.steps.map((s, i) => ({
+    id: `step-${i + 1}`,
+    title: s.title,
+    description: s.description,
+    hints: s.hints,
+    complexity: s.complexity,
   }));
 
-  return {goal , researchSummary:validated.researchSummary , steps}
+  return { goal, researchSummary: validated.researchSummary, steps };
 }

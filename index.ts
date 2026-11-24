@@ -6,15 +6,15 @@ import { runWakeup } from "./tui/wakeup";
 const program = new Command();
 
 program
-  .name("Personalclaw")
-  .description("This is opencalw gateway to make the projects")
+  .name("personalclaw")
+  .description("PersonalClaw terminal coding assistant")
   .version("0.0.0.1");
 
 program
-  .command("wakeup")
+  .command("wakeup", { isDefault: true })
   .description("Show the Banner and then select your mode")
   .action(async () => {
-    runWakeup();
+    await runWakeup();
   });
 
-program.parseAsync(program.argv);
+await program.parseAsync(process.argv);

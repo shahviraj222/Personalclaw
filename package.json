@@ -9,10 +9,12 @@
   "scripts": {
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "typecheck": "bun check"
+    "start": "bun index.ts",
+    "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
     "@types/bun": "latest",
+    "@types/marked-terminal": "^6.1.1",
     "@types/node": "^26.6.6",
     "prettier": "3.10.1"
   },
@@ -22,11 +24,15 @@
   "dependencies": {
     "@clack/core": "^1.6.0",
     "@clack/prompts": "^1.9.0",
+    "@mendable/firecrawl-js": "^4",
     "@openrouter/ai-sdk-provider": "^3.1.0",
     "ai": "^7.0.181",
     "chalk": "^6.0.1",
     "commander": "^15.1.0",
     "diff": "^9.0.0",
-    "figlet": "^1.13.0"
+    "figlet": "^1.13.0",
+    "marked": "^18",
+    "marked-terminal": "^7",
+    "zod": "^4"
   }
 }

@@ -1,1 +1,1 @@
-export {getAgentModel} from "./ai.config.ts"
+export { getAgentModel } from "./ai.config.ts";
