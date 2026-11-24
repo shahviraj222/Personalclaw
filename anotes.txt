@@ -18,4 +18,11 @@ help to create interactive in good formate
 5)figlet
 i you want to increase the ont or chnage styling poster creation
 
-
+6) FireCrawl 
+it is used for scraping no we can not use the fetch because rendering javascript not give you the content it tells run this script
+so for that we have to use the chromium browser 
+now once the we get the entire html structure
+html_to
+Clean & Convert (HTML to Markdown
+Fetch & Render (Chromium / Playwright = accessing browser)
+so many other things are there study more if you are intrested
