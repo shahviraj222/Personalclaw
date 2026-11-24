@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PersonalClaw — AI Terminal Assistant</title>
+  <meta name="description" content="A Bun terminal assistant for working on your local codebase. OpenRouter models, structured plans, and staged file changes — all in your terminal." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a href="#" class="logo">
+        <span class="logo-mark">◷</span>
+        <span class="logo-text">Personal<span class="logo-accent">Claw</span></span>
+      </a>
+
+      <div class="nav-links">
+        <a href="#features">Features</a>
+        <a href="#modes">Modes</a>
+        <a href="#usage">Usage</a>
+        <a href="#usage" class="btn btn-primary">Get Started</a>
+      </div>
+
+      <button class="nav-toggle" aria-label="Toggle menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+
+    <div class="container hero-inner">
+      <div class="hero-content">
+        <span class="hero-badge">Open Source · Built with Bun</span>
+        <h1 class="hero-title">Your AI <span class="gradient-text">Terminal Assistant</span></h1>
+        <p class="hero-subtitle">Describe a task, review staged file changes and shell commands, then
+          approve — all from your local codebase with OpenRouter models.</p>
+
+        <div class="hero-actions">
+          <a href="#usage" class="btn btn-primary">View Usage</a>
+          <a href="#" class="btn btn-outline">View on GitHub</a>
+        </div>
+
+        <div class="hero-stats">
+          <div class="stat"><span class="stat-value">3</span><span class="stat-label">CLI Modes</span></div>
+          <div class="stat"><span class="stat-value">∞</span><span class="stat-label">Models via OpenRouter</span></div>
+          <div class="stat"><span class="stat-value">100%</span><span class="stat-label">Staged Before Approval</span></div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="terminal-card">
+          <div class="terminal-header">
+            <div class="terminal-dots"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span></div>
+            <div class="terminal-title">personalclaw</div>
+          </div>
+          <div class="terminal-body">
+            <div class="line"><span class="prompt">$</span><span class="command">bun index.ts wakeup</span></div>
+            <div class="line output"><span class="output-text">✨ Interactive menu opened</span></div>
+            <div class="line"><span class="prompt">$</span><span class="command cursor">bun index.ts plan "add auth"</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="features" id="features">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-kicker">Features</span>
+        <h2 class="section-title">Everything you need in your terminal</h2>
+      </div>
+
+      <div class="features-grid">
+        <article class="feature-card">
+          <div class="feature-icon">🤖</div>
+          <h3 class="feature-title">Agent Mode</h3>
+          <p class="feature-text">Describe a task and let the agent work. Every file change and shell command is staged for your review before anything is applied.</p>
+        </article>
+
+        <article class="feature-card">
+          <div class="feature-icon">📋</div>
+          <h3 class="feature-title">Plan Mode</h3>
+          <p class="feature-text">Break a goal into steps, review them, select which to execute, and confirm before any changes touch your disk.</p>
+        </article>
+
+        <article class="feature-card">
+          <div class="feature-icon">❓</div>
+          <h3 class="feature-title">Ask Mode</h3>
+          <p class="feature-text">Ask questions about your workspace and save the answers as Markdown files after reviewing the proposed creation.</p>
+        </article>
+
+        <article class="feature-card">
+          <div class="feature-icon">🌐</div>
+          <h3 class="feature-title">Optional Web Access</h3>
+          <p class="feature-text">Enable FireCrawl for web search, crawling, and URL fetching when you need external context in Ask and Plan modes.</p>
+        </article>
+
+        <article class="feature-card">
+          <div class="feature-icon">🔑</div>
+          <h3 class="feature-title">One Key, Any Model</h3>
+          <p class="feature-text">Powered by OpenRouter — connect to any model with a single API key, including free text models.</p>
+        </article>
+
+        <article class="feature-card">
+          <div class="feature-icon">🎨</div>
+          <h3 class="feature-title">Pretty CLI</h3>
+          <p class="feature-text">Interactive prompts with Clack, colorful output with Chalk, and poster-style text with Figlet.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="modes" id="modes">
+    <div class="orb orb-4"></div>
+    <div class="container">
+      <div class="section-header">
+        <span class="section-kicker">CLI Modes</span>
+        <h2 class="section-title">Choose your workflow</h2>
+      </div>
+
+      <div class="modes-grid">
+        <div class="mode-card">
+          <span class="mode-badge">Agent</span>
+          <h3>Autonomous Task Runner</h3>
+          <p>
+            Describe what you want to build or fix. Review staged changes,
+            approve individually or all at once, then cancel if needed.
+          </p>
+        </div>
+
+        <div class="mode-card">
+          <span class="mode-badge">Plan</span>
+          <h3>Structured Execution</h3>
+          <p>
+            Generate a step-by-step plan for your goal. Select the steps you
+            want to run, confirm, and review staged changes before applying.
+          </p>
+        </div>
+
+        <div class="mode-card">
+          <span class="mode-badge">Ask</span>
+          <h3>Workspace Q&amp;A</h3>
+          <p>
+            Ask questions about your codebase. Review the model's answer and
+            save it as a Markdown file in your project.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="usage" id="usage">
+    <div class="container">
+      <div class="usage-inner">
+        <div class="usage-content">
+          <span class="section-kicker">Get Started</span>
+          <h2 class="section-title">Run it locally in seconds</h2>
+          <p class="usage-intro">Install Bun, set your OpenRouter key, and launch the assistant in your current working directory.</p>
+
+          <div class="code-block">
+            <pre><code class="language-bash"><span class="hljs-keyword"># 1</span> Install dependencies
+<span class="hljs-variable language_">bun</span> install --frozen-lockfile
+
+<span class="hljs-keyword"># 2</span> Configure environment
+<span class="hljs-variable language_">cp</span> -n .env.example .env
+<span class="hljs-comment"># Set OPENROUTER_API_KEY and DEFAULT_MODEL in .env</span>
+
+<span class="hljs-keyword"># 3</span> Start the assistant
+<span class="hljs-variable language_">bun</span> run start</code></pre>
+          </div>
+
+          <a href="#" class="btn btn-primary btn-large">View Documentation</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <span class="logo-mark">◷</span>
+        <span class="logo-text">Personal<span class="logo-accent">Claw</span></span>
+      </div>
+      <p class="footer-text">Built with Bun, OpenRouter, and the AI SDK. All mutations staged until you approve.</p>
+      <div class="footer-links">
+        <a href="#">GitHub</a>
+        <a href="#">Report Issue</a>
+        <a href="#">License</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
