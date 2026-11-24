@@ -1,0 +1,21 @@
+Project Uses What:
+
+1) ai sdk
+ai = allowed you totalk to any model you want    
+ai router = which allowed you to connect any model with only one api key  (centralised key or every model and pay as you use)
+also has free models for text see
+
+2) chalk
+make cmd colorfull
+
+3) commander 
+you can connect with cmd
+
+4) clack
+help to create cmd good looking (giving options, slect from this only)
+help to create interactive in good formate
+
+5)figlet
+i you want to increase the ont or chnage styling poster creation
+
+
